@@ -1,3 +1,5 @@
+
+```python
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
@@ -5,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 df = pd.read_csv('african-transaction-dataset.csv')
 
 # Prepare data
-X = df[['amount']]  # Simple feature
+X = df[['amount']]  # Using only amount for simplicity
 y = df['is_fraud']
 
 # Train model
@@ -14,8 +16,17 @@ model.fit(X, y)
 
 # Prediction function
 def predict_fraud(amount):
-    return model.predict([[amount]])[0]
+    """Predict fraud probability for a transaction amount"""
+    probability = model.predict_proba([[amount]])[0][1]
+    return probability
 
-# Test
-print(predict_fraud(80000))  # Likely fraud (1)
-print(predict_fraud(5000))   # Likely legit (0)
+# Example usage
+if __name__ == "__main__":
+    test_amounts = [80000, 5000, 150000, 3000]
+    for amount in test_amounts:
+        risk = predict_fraud(amount)
+        print(f"₦{amount}: Fraud risk = {risk:.0%}")
+        if risk > 0.7:
+            print("🚨 High risk! Review required")
+        else:
+            print("✅ Low risk")
