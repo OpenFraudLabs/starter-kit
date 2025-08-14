@@ -1,0 +1,8 @@
+transaction_id,amount,currency,country,merchant_category,is_fraud
+TX001,15000,NGN,Nigeria,electronics,0
+TX002,500,KES,Kenya,groceries,0
+TX003,75000,ZAR,South Africa,jewelry,1
+TX004,2500,GHS,Ghana,clothing,0
+TX005,120000,NGN,Nigeria,electronics,1
+TX006,8000,UGX,Uganda,services,0
+TX007,45000,KES,Kenya,electronics,1
