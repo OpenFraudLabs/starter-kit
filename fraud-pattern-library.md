@@ -34,7 +34,7 @@ This library documents common financial fraud patterns observed across Africa, w
 2. Takes control of mobile money account  
 3. Initiates high-value transfers  
 
-**Animated Demo**: *(insert gif or link here)*
+
 
 **Detection Strategy**:
 ```python
@@ -66,7 +66,6 @@ def detect_sim_swap(user, recent_logins):
 - Small-value transactions to multiple recipients  
 - Rapid transfers within minutes  
 
-**Animated Demo**: *(insert gif or link here)*
 
 **Detection Strategy**:
 ```python
